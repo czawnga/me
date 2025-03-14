@@ -1,12 +1,10 @@
 <html lang="en">
  <head>
     <meta property="og:image" content="edward.jpg" />
-    <link rel="icon" type="icon" href="edward.jpg"/>
+    <link rel="icon" href="favicon.png" type="image/png"/>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>
-     Edward
-    </title>
+    <title>Edward</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -34,35 +32,36 @@
      }
      .logo-container {
       display: inline-block;
-      width: 100px; /* Adjust size */
+      width: 100px;
       height: auto;
     }
     .logo-container img {
       width: 100%;
       height: auto;
-      cursor: pointer; /* Changes cursor to pointer on hover */
+      cursor: pointer;
     }
     </style>
  </head>
- <body class="flex items-center justify-center min-h-screen relative">
+ <body class="flex items-center justify-center min-h-screen relative bg-gray-900">
   <div id="particles-js"></div>
-  <div class="text-center text-gray-300">
-   <img alt="Profile image" class="profile-image mx-auto mb-4" height="180" src="edward.jpg" width="180"/>
-   <h1 class="text-5xl font-bold text-[#d4c5a2] mb-2">
+  <div class="text-center text-gray-300 p-4">
+   <img alt="Profile image" class="profile-image mx-auto mb-6 w-1/4 sm:w-1/6 md:w-1/8" src="edward.jpg" />
+   <h1 class="text-5xl sm:text-6xl font-bold text-[#d4c5a2] mb-2">
     Edward Lalnipuia
    </h1>
    <p class="text-xl mb-2">
     edxpwn
    </p>
    <p class="text-md mb-4">
-    Student / Coder / Chess / Boxing 
+    Student / Coder / Chess / Boxing
    </p>
-   <a href="https://x.com/edxpwn" target="_blank" class="logo-container">
-    <img src="X_logo.jpg" alt="X_logo.jpg">
-  </a>
-   <a href="https://instagram.com/edw4rd.me" target="_blank" class="logo-container">
-    <img src="ig.png" alt="ig.png">
-  </a>
+   <div class="flex justify-center mb-4">
+     <a href="https://x.com/edxpwn" target="_blank" class="logo-container mx-2">
+        <img src="X_logo.jpg" alt="X Logo" />
+     </a>
+     <a href="https://instagram.com/edw4rd.me" target="_blank" class="logo-container mx-2">
+        <img src="ig.png" alt="Instagram Logo" />
+     </a>
    </div>
   </div>
   <script>
@@ -72,5 +71,3 @@
   </script>
  </body>
 </html>
-
-

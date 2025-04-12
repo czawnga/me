@@ -16,8 +16,8 @@
     }
 
     body {
-      background: #f4f7f6; /* Light theme background */
-      color: #333; /* Light text color */
+      background: #f4f7f6;
+      color: #333;
     }
 
     .container {
@@ -29,7 +29,7 @@
     }
 
     .card {
-      background: #ffffff; /* Default card background */
+      background: #ffffff;
       border-radius: 12px;
       padding: 40px 30px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -38,7 +38,6 @@
       width: 100%;
       animation: fadeIn 0.6s ease-out;
       opacity: 0;
-      transition: background 0.3s, color 0.3s;
     }
 
     @keyframes fadeIn {
@@ -75,9 +74,7 @@
       gap: 6px;
     }
 
-    .verified-badge svg {
-      display: inline-block;
-      vertical-align: middle;
+    .verified-badge {
       width: 18px;
       height: 18px;
     }
@@ -134,47 +131,9 @@
     .buttons i {
       font-size: 1.2em;
     }
-
-    #toggle-darkmode {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px;
-      background-color: #0077cc;
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    /* Dark mode styles */
-    .dark-mode body {
-      background: #121212; /* Dark background */
-      color: #e0e0e0; /* Light text color */
-    }
-
-    .dark-mode .card {
-      background: #1e1e1e; /* Dark card background */
-      color: #e0e0e0; /* Text color in card */
-    }
-
-    .dark-mode .buttons a {
-      background: #005fa3; /* Button background for dark mode */
-      color: #fff;
-    }
-
-    .dark-mode .buttons a:hover {
-      background: #0077cc;
-    }
-
-    .dark-mode .profile-img {
-      border: 3px solid #ffffff; /* White border for the profile image */
-    }
   </style>
 </head>
 <body>
-  <button id="toggle-darkmode">Toggle Dark Mode</button>
 
   <div class="container">
     <div class="card">
@@ -184,13 +143,8 @@
 
       <h1 class="name">
         Edward Lalnipuia
-        <span class="verified-badge" title="Verified">
-          <!-- Instagram Verification Badge SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-            <path d="M8 16a7.93 7.93 0 0 1-5.656-2.344A8 8 0 1 1 8 16zm0-15a7 7 0 1 0 5.657 11.657A7 7 0 0 0 8 1z"/>
-            <path d="M11.854 5.646a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.707 0l-2-2a.5.5 0 0 1 .707-.707l1.647 1.647L11.854 5.646z"/>
-          </svg>
-        </span>
+        <!-- Instagram Verification Badge SVG -->
+        <img src="https://img.icons8.com/ios-filled/50/0077cc/instagram-verification-badge.png" alt="Verified" class="verified-badge" />
       </h1>
 
       <p class="username"><a href="https://www.instagram.com/edward.wtf" target="_blank">@edward.wtf</a></p>
@@ -213,16 +167,10 @@
   </div>
 
   <script>
-    // Toggle dark mode class on the body
-    const toggleButton = document.getElementById('toggle-darkmode');
-
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
     window.onload = () => {
       document.querySelector('.card').style.opacity = 1;
     };
   </script>
+
 </body>
 </html>

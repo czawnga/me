@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /> <!-- Prevent zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Edward Lalnipuia</title>
   <meta name="description" content="Personal landing page of Edward Lalnipuia – Aizawl-based enthusiast of business, fitness, chess, and more. Connect via Instagram or Email." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
@@ -20,7 +20,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh; /* Full viewport height */
+      min-height: 100vh;
     }
 
     .card {
@@ -32,6 +32,7 @@
       max-width: 400px;
       width: 100%;
       animation: fadeIn 0.6s ease-out;
+      opacity: 0;
     }
 
     @keyframes fadeIn {
@@ -141,12 +142,12 @@
     <div class="card">
       <div class="profile-wrapper">
         <img src="IMG_20230527_221557_793.jpg" alt="Edward's photo" class="profile-img" />
-        <span class="badge">E</span> <!-- Optional neutral badge -->
+        <span class="badge">E</span>
       </div>
       <h1>Edward Lalnipuia</h1>
       <p class="intro">
         Welcome to my world.<br><br>
-        I am from Aizawl, Mizoram.<br><br>
+        I am from Aizawl, Mizoram.<br>
         I am interested in things like Business / Entrepreneurship / Fitness / Chess
       </p>
       <div class="buttons">
@@ -159,5 +160,33 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // JavaScript to add fade-in effect on page load
+    window.onload = function () {
+      const card = document.querySelector('.card');
+      card.style.opacity = 1; // Gradually fade the card into view
+    };
+
+    // JavaScript to trigger a pop-up greeting
+    window.onload = function() {
+      setTimeout(function() {
+        alert("Welcome to my website! Explore my passions and connect with me.");
+      }, 1000); // Show alert after 1 second of page load
+    };
+
+    // Button hover effect
+    const buttons = document.querySelectorAll('.buttons a');
+    buttons.forEach(button => {
+      button.addEventListener('mouseover', () => {
+        button.style.transform = 'scale(1.05)';
+        button.style.transition = 'transform 0.3s ease';
+      });
+
+      button.addEventListener('mouseout', () => {
+        button.style.transform = 'scale(1)';
+      });
+    });
+  </script>
 </body>
 </html>

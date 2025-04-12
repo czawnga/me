@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
+    /* Prevent default dark or light mode from overriding */
+    html {
+      background-color: #f4f7f6 !important;
     }
 
     body {
-      background: #f4f7f6;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f6 !important;  /* Ensure the background remains light */
+      color: #333 !important;  /* Ensure the text color stays dark */
     }
 
     .container {
@@ -74,9 +75,10 @@
       gap: 6px;
     }
 
+    /* Instagram Verification Badge SVG */
     .verified-badge {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
     }
 
     .username {
@@ -143,8 +145,10 @@
 
       <h1 class="name">
         Edward Lalnipuia
-        <!-- Instagram Verification Badge SVG -->
-        <img src="https://img.icons8.com/ios-filled/50/0077cc/instagram-verification-badge.png" alt="Verified" class="verified-badge" />
+        <!-- Updated Instagram Verification Badge SVG -->
+        <svg class="verified-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm0 17c-4.125 0-7.5-3.375-7.5-7.5s3.375-7.5 7.5-7.5 7.5 3.375 7.5 7.5-3.375 7.5-7.5 7.5zm3-8.25h-1.25v4.5c0 .375-.375.625-.75.625s-.75-.25-.75-.625v-4.5h-1.5v4.5c0 .375-.375.625-.75.625s-.75-.25-.75-.625v-4.5H9.5v-1.5h1.25v-2.75c0-1.125.75-1.875 1.875-1.875 1.125 0 1.875.75 1.875 1.875v2.75h1.25v1.5z"/>
+        </svg>
       </h1>
 
       <p class="username"><a href="https://www.instagram.com/edward.wtf" target="_blank">@edward.wtf</a></p>

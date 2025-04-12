@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /> <!-- Prevent zooming -->
   <title>Edward Lalnipuia</title>
   <meta name="description" content="Personal landing page of Edward Lalnipuia – Aizawl-based enthusiast of business, fitness, chess, and more. Connect via Instagram or Email." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     html, body {
-      overflow: hidden;
       margin: 0;
       padding: 0;
       height: 100%;
@@ -19,9 +18,9 @@
 
     .container {
       display: flex;
-      height: 100%;
       justify-content: center;
       align-items: center;
+      min-height: 100vh; /* Full viewport height */
     }
 
     .card {

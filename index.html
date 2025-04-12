@@ -71,12 +71,13 @@
       margin-bottom: 6px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
     }
 
     .verified-badge {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
+      margin-left: 4px;
+      vertical-align: middle;
     }
 
     .username {
@@ -131,6 +132,25 @@
     .buttons i {
       font-size: 1.2em;
     }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 20px;
+      }
+
+      .name {
+        font-size: 1.5em;
+      }
+
+      .intro {
+        font-size: 0.95em;
+      }
+
+      .buttons a {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -143,19 +163,15 @@
 
       <h1 class="name">
         Edward Lalnipuia
-        <!-- Real Instagram Verification Badge -->
-        <svg class="verified-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-          <path fill="#3B82F6" d="M512 256c0 141.385-114.615 256-256 256S0 397.385 0 256 114.615 0 256 0s256 114.615 256 256z"/>
-          <path fill="#fff" d="M386.347 161.758l-154.14 177.86-83.133-83.133-35.713 35.713 118.846 118.846L422.06 197.47l-35.713-35.712z"/>
-        </svg>
+        <img src="icons8-instagram-verification-badge.svg" alt="Verified Badge" class="verified-badge" />
       </h1>
 
       <p class="username"><a href="https://www.instagram.com/edward.wtf" target="_blank">@edward.wtf</a></p>
 
       <p class="intro">
         Welcome to my world.<br><br>
-        I am from Aizawl, Mizoram 🇮🇳<br>
-        I am interested in things like Business / Entrepreneurship / 💪Fitness / Chess♟️
+        I am from Aizawl, Mizoram.<br>
+        I am interested in things like Business / Entrepreneurship / Fitness / Chess
       </p>
 
       <div class="buttons">

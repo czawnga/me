@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edward Lalnipuia</title>
+  <meta name="description" content="Personal landing page of Edward Lalnipuia – Aizawl-based enthusiast of business, fitness, chess, and more. Connect via Instagram or Email." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -31,6 +32,12 @@
       text-align: center;
       max-width: 400px;
       width: 100%;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .profile-wrapper {
@@ -45,18 +52,27 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #0077cc;
+      transition: transform 0.3s ease;
     }
 
-    .verified-badge {
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .badge {
       position: absolute;
       bottom: 4px;
       right: 4px;
-      background-color: #ffffff;
+      width: 25px;
+      height: 25px;
+      background-color: #0077cc;
       border-radius: 50%;
-      padding: 2px;
-      font-size: 1.2em;
-      color: #0095f6;
-      border: 2px solid #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8em;
     }
 
     h1 {
@@ -99,6 +115,26 @@
     .buttons i {
       font-size: 1.2em;
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .intro {
+        font-size: 0.95em;
+      }
+
+      .buttons a {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -106,9 +142,7 @@
     <div class="card">
       <div class="profile-wrapper">
         <img src="IMG_20230527_221557_793.jpg" alt="Edward's photo" class="profile-img" />
-        <span class="verified-badge">
-          <i class="fas fa-check-circle"></i>
-        </span>
+        <span class="badge">E</span> <!-- Optional neutral badge -->
       </div>
       <h1>Edward Lalnipuia</h1>
       <p class="intro">

@@ -54,17 +54,21 @@
       margin-bottom: 16px;
     }
 
+    .profile-border {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      padding: 3px; /* Thickness of the rainbow border */
+      border-radius: 50%;
+      display: inline-block;
+      animation: rotateRainbow 4s linear infinite; /* Animation for rotating the rainbow */
+    }
+
     .profile-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #3B82F6;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05);
+      background-color: #1e1e1e; /* Fallback background inside */
+      display: block;
     }
 
     .name {
@@ -155,6 +159,17 @@
         padding: 8px 12px;
       }
     }
+
+    /* Rainbow rotation animation */
+    @keyframes rotateRainbow {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -162,7 +177,9 @@
   <div class="container">
     <div class="card">
       <div class="profile-wrapper">
-        <img src="PSX_20250413_145241.jpg" alt="Edward's photo" class="profile-img" />
+        <div class="profile-border">
+          <img src="PSX_20250413_145241.jpg" alt="Portrait of Edward Lalnipuia" class="profile-img" loading="lazy" />
+        </div>
       </div>
 
       <h1 class="name">
@@ -179,10 +196,10 @@
       </p>
 
       <div class="buttons">
-        <a href="https://www.instagram.com/edward.wtf" target="_blank">
+        <a href="https://www.instagram.com/edward.wtf" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-instagram"></i> Instagram
         </a>
-        <a href="mailto:edwardlalnipuia@mail.ru">
+        <a href="mailto:edwardlalnipuia@mail.ru" rel="noopener noreferrer">
           <i class="fas fa-envelope"></i> Email
         </a>
       </div>

@@ -22,9 +22,7 @@
       font-family: 'Poppins', sans-serif;
       color: #f5f5f5;
       overflow-x: hidden;
-      -webkit-user-select: none;
-      user-select: none;
-      touch-action: manipulation;
+      touch-action: pan-y;
     }
 
     .container {
@@ -32,7 +30,7 @@
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
-      padding-top: 50px;
+      padding-top: 40px;
     }
 
     .card {
@@ -55,12 +53,12 @@
     .profile-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 0px; /* Almost no gap now */
+      margin-bottom: 8px; /* Smaller gap */
     }
 
     .profile-border {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      padding: 6px;
+      padding: 5px;
       border-radius: 50%;
       display: inline-block;
     }
@@ -71,7 +69,7 @@
     }
 
     .profile-img {
-      width: 150px;
+      width: 150px; /* Bigger profile pic */
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
@@ -82,23 +80,23 @@
       font-size: 1.8em;
       font-weight: 700;
       color: #ffffff;
-      margin: 2px 0 0px; /* very small vertical margin */
+      margin: 5px 0 2px;
       display: inline-flex;
       align-items: center;
-      gap: 3px; /* closer to the badge */
+      gap: 4px;
     }
 
     .verified-badge {
-      width: 18px;
-      height: 18px;
-      margin-top: 2px; /* adjust vertically */
+      width: 26px; /* Slightly bigger */
+      height: 26px;
+      margin-top: 3px; /* Slightly lower */
     }
 
     .username {
       font-size: 1em;
       color: #cccccc;
       font-weight: 500;
-      margin-top: 5px;
+      margin-top: 0;
       margin-bottom: 20px;
     }
 
@@ -143,6 +141,11 @@
         padding: 30px 20px;
       }
 
+      .profile-img {
+        width: 130px;
+        height: 130px;
+      }
+
       .name {
         font-size: 1.6em;
       }
@@ -180,7 +183,7 @@
 
       <p class="intro">
         Entrepreneur / Programmer / Student <br><br>
-        📍Aizawl, Mizoram 
+        📍Aizawl, Mizoram
       </p>
 
       <div class="buttons">

@@ -70,9 +70,10 @@
       object-fit: cover;
       background-color: #1e1e1e; /* Fallback background inside */
       display: block;
-      position: absolute; /* Ensures the image is not affected by the border's rotation */
+      position: absolute; /* Ensures the image is positioned correctly inside the border */
       top: 0;
       left: 0;
+      transform: none; /* Prevent the image from rotating */
     }
 
     .name {
@@ -196,7 +197,7 @@
       <p class="intro">
         Welcome to my World 🌍<br><br>
         I'm from Aizawl, Mizoram🇮🇳<br><br>
-        I love Business / Programming / Fitness / Chess
+        I love Business / Programming👨‍💻/ Fitness / Chess
       </p>
 
       <div class="buttons">

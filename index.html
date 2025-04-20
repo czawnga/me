@@ -11,7 +11,7 @@
   <link rel="icon" href="IMG_20240403_213310_346.ico" type="image/x-icon">
 
   <!-- Fonts and Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -20,7 +20,7 @@
       margin: 0;
       padding: 0;
       background-color: #121212;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Montserrat', sans-serif; /* Using Montserrat font */
       color: #f0f0f0;
       height: 100%;
     }
@@ -51,16 +51,25 @@
       transform: scale(1.05);
     }
 
-    /* Profile Image */
+    /* Profile Image Wrapper */
     .profile-wrapper {
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
     }
 
+    /* Rainbow border around profile image */
     .profile-border {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       padding: 4px;
       border-radius: 50%;
       display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1; /* Ensures the border is behind the image */
     }
 
     .profile-img {
@@ -69,6 +78,8 @@
       border-radius: 50%;
       object-fit: cover;
       background-color: #1e1e1e;
+      position: relative;
+      z-index: 2; /* Ensures the image is above the rainbow border */
     }
 
     /* Name & Username */
@@ -76,6 +87,15 @@
       font-size: 2em;
       font-weight: 600;
       margin: 10px 0;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .verified-badge {
+      width: 24px;
+      height: 24px;
+      margin-left: 5px;
+      vertical-align: middle;
     }
 
     .username {
@@ -163,6 +183,7 @@
 
       <h1 class="name">
         Edward Lalnipuia
+        <img src="icons8-instagram-verification-badge.svg" alt="Verified Badge" class="verified-badge">
       </h1>
 
       <p class="username">

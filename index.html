@@ -60,6 +60,7 @@
       border-radius: 50%;
       display: inline-block;
       animation: rotateRainbow 4s linear infinite; /* Only the border rotates */
+      position: relative; /* Ensures the image is not affected by the border's rotation */
     }
 
     .profile-img {
@@ -69,7 +70,9 @@
       object-fit: cover;
       background-color: #1e1e1e; /* Fallback background inside */
       display: block;
-      /* Remove any rotation from the image itself */
+      position: absolute; /* Ensures the image is not affected by the border's rotation */
+      top: 0;
+      left: 0;
     }
 
     .name {
@@ -192,8 +195,8 @@
 
       <p class="intro">
         Welcome to my World 🌍<br><br>
-        I'm from Aizawl, Mizoram🇮🇳<br>
-        I love Business / Entrepreneurship / Fitness / Chess
+        I'm from Aizawl, Mizoram🇮🇳<br><br>
+        I love Business / Programming / Fitness / Chess
       </p>
 
       <div class="buttons">

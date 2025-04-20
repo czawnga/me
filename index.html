@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Edward Lalnipuia</title>
-  <meta name="description" content="Personal landing page of Edward Lalnipuia – Aizawl-based enthusiast of business, fitness, chess, and more. Connect via Instagram or Email." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Edward Lalnipuia - Welcome</title>
+  <meta name="description" content="Welcome to the official landing page of Edward Lalnipuia. Discover more about my passions, business, fitness, and more!">
   <meta name="theme-color" content="#121212">
 
   <!-- Favicon -->
@@ -15,52 +15,52 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* Basic reset and body styling */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #121212 !important;
+      background-color: #121212;
       font-family: 'Poppins', sans-serif;
       color: #f0f0f0;
+      height: 100%;
     }
 
+    /* Centering the main container */
     .container {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding-top: 50px;
-    }
-
-    .card {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 40px 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
       text-align: center;
-      max-width: 400px;
+      padding: 20px;
+    }
+
+    /* Card layout */
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 450px;
       width: 100%;
-      animation: fadeIn 0.6s ease-out;
-      opacity: 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card:hover {
+      transform: scale(1.05);
     }
 
+    /* Profile Image */
     .profile-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .profile-border {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      padding: 3px; /* Thickness of the rainbow border */
+      padding: 4px;
       border-radius: 50%;
       display: inline-block;
-      animation: rotateRainbow 4s linear infinite; /* Only the border rotates */
-      position: relative; /* Ensures the image is not affected by the border's rotation */
     }
 
     .profile-img {
@@ -68,38 +68,20 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      background-color: #1e1e1e; /* Fallback background inside */
-      display: block;
-      position: absolute; /* Ensures the image is positioned correctly inside the border */
-      top: 0;
-      left: 0;
-      transform: none; /* Prevent the image from rotating */
+      background-color: #1e1e1e;
     }
 
+    /* Name & Username */
     .name {
-      font-size: 1.8em;
+      font-size: 2em;
       font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 6px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .verified-badge {
-      width: 24px;  /* Increased size */
-      height: 24px; /* Increased size */
-      margin-left: 2px; /* Reduced margin to bring it closer */
-      vertical-align: middle;
-      margin-top: 2px; /* Adjusted margin to align with name */
+      margin: 10px 0;
     }
 
     .username {
-      font-size: 0.95em;
-      color: #cccccc;
-      font-weight: 500;
-      margin-top: 0;
+      font-size: 1em;
+      color: #bbbbbb;
       margin-bottom: 20px;
-      letter-spacing: 0.3px;
     }
 
     .username a {
@@ -108,44 +90,47 @@
     }
 
     .username a:hover {
-      text-decoration: underline;
       color: #3B82F6;
+      text-decoration: underline;
     }
 
+    /* Intro section */
     .intro {
-      font-size: 1em;
+      font-size: 1.1em;
       color: #bbbbbb;
-      margin-bottom: 25px;
-      line-height: 1.5;
+      margin-bottom: 30px;
+      line-height: 1.6;
     }
 
+    /* Button Section */
     .buttons {
       display: flex;
-      justify-content: center;
       gap: 20px;
+      justify-content: center;
     }
 
     .buttons a {
       display: flex;
       align-items: center;
       gap: 8px;
-      background: #3B82F6;
-      color: #ffffff;
-      padding: 10px 16px;
+      background-color: #3B82F6;
+      color: white;
+      padding: 12px 18px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     .buttons a:hover {
-      background: #2563EB;
+      background-color: #2563EB;
     }
 
     .buttons i {
-      font-size: 1.2em;
+      font-size: 1.5em;
     }
 
+    /* Responsive design */
     @media (max-width: 480px) {
       .card {
         padding: 30px 20px;
@@ -156,25 +141,14 @@
       }
 
       .intro {
-        font-size: 0.95em;
+        font-size: 1em;
       }
 
       .buttons a {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        font-size: 1em;
+        padding: 10px 14px;
       }
     }
-
-    /* Rainbow rotation animation */
-    @keyframes rotateRainbow {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -183,21 +157,22 @@
     <div class="card">
       <div class="profile-wrapper">
         <div class="profile-border">
-          <img src="PSX_20250413_145241.jpg" alt="Portrait of Edward Lalnipuia" class="profile-img" loading="lazy" />
+          <img src="PSX_20250413_145241.jpg" alt="Edward Lalnipuia" class="profile-img" loading="lazy">
         </div>
       </div>
 
       <h1 class="name">
         Edward Lalnipuia
-        <img src="icons8-instagram-verification-badge.svg" alt="Verified Badge" class="verified-badge" />
       </h1>
 
-      <p class="username"><a href="https://www.instagram.com/edward.wtf" target="_blank">@edward.wtf</a></p>
+      <p class="username">
+        <a href="https://www.instagram.com/edward.wtf" target="_blank">@edward.wtf</a>
+      </p>
 
       <p class="intro">
         Welcome to my World 🌍<br><br>
-        I'm from Aizawl, Mizoram🇮🇳<br><br>
-        I love Business / Programming👨‍💻/ Fitness / Chess
+        I'm from Aizawl, Mizoram🇮🇳<br>
+        Passionate about Business / Entrepreneurship / Fitness / Chess
       </p>
 
       <div class="buttons">

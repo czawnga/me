@@ -10,9 +10,8 @@
   <!-- Favicon -->
   <link rel="icon" href="IMG_20240403_213310_346.ico" type="image/x-icon" />
 
-  <!-- Fonts and Icons -->
+  <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     html, body {
@@ -51,12 +50,12 @@
     .profile-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 4px; /* Reduced to make name closer */
+      margin-bottom: 8px; /* Reduced space */
     }
 
     .profile-border {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      padding: 5px;
+      padding: 6px;
       border-radius: 50%;
       display: inline-block;
     }
@@ -67,8 +66,8 @@
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 150px; /* Made bigger */
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
@@ -78,7 +77,7 @@
       font-size: 1.8em;
       font-weight: 700;
       color: #ffffff;
-      margin: 0; /* Tightened space */
+      margin: 5px 0 0px;
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -87,15 +86,15 @@
     .verified-badge {
       width: 20px;
       height: 20px;
-      margin-top: 4px; /* Moved slightly lower */
-      margin-left: -4px; /* Adjusted to bring it closer to the name */
+      margin-top: 4px;
     }
 
     .username {
       font-size: 1em;
-      color: #dddddd;
+      color: #cccccc;
       font-weight: 500;
-      margin: 4px 0 20px 0; /* Tight spacing */
+      margin-top: 5px;
+      margin-bottom: 20px;
     }
 
     .intro {
@@ -108,30 +107,29 @@
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
       margin-top: 20px;
     }
 
     .buttons a {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       background: #3B82F6;
-      color: #ffffff;
-      padding: 10px 16px;
-      border-radius: 6px;
+      padding: 16px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 500;
       transition: background 0.3s ease;
-      font-size: 0.95em;
+      width: 60px;
+      height: 60px;
     }
 
     .buttons a:hover {
       background: #2563EB;
     }
 
-    .buttons i {
-      font-size: 1.2em;
+    .buttons img {
+      width: 30px;
+      height: 30px;
     }
 
     @media (max-width: 480px) {
@@ -148,8 +146,13 @@
       }
 
       .buttons a {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        width: 55px;
+        height: 55px;
+      }
+
+      .buttons img {
+        width: 28px;
+        height: 28px;
       }
     }
   </style>
@@ -176,15 +179,12 @@
 
       <p class="intro">
         Entrepreneur / Programmer / Student <br><br>
-        📍Aizawl, Mizoram 
+        📍Chanmari, Aizawl, Mizoram 
       </p>
 
       <div class="buttons">
         <a href="https://www.instagram.com/edward.wtf" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="mailto:edwardlalnipuia@mail.ru" rel="noopener noreferrer">
-          <i class="fas fa-envelope"></i> Email
+          <img src="icons8-instagram.svg" alt="Instagram" />
         </a>
       </div>
     </div>
@@ -197,4 +197,4 @@
   </script>
 
 </body>
-          </html>
+</html>

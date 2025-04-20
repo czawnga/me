@@ -59,7 +59,7 @@
       padding: 3px; /* Thickness of the rainbow border */
       border-radius: 50%;
       display: inline-block;
-      animation: rotateRainbow 4s linear infinite; /* Animation for rotating the rainbow */
+      animation: rotateRainbow 4s linear infinite; /* Only the border rotates */
     }
 
     .profile-img {
@@ -69,6 +69,7 @@
       object-fit: cover;
       background-color: #1e1e1e; /* Fallback background inside */
       display: block;
+      /* Remove any rotation from the image itself */
     }
 
     .name {

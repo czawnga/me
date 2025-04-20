@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Edward Lalnipuia</title>
   <meta name="description" content="Edward Lalnipuia's personal landing page. Business, Fitness, Chess." />
   <meta name="theme-color" content="#121212" />
@@ -10,8 +10,9 @@
   <!-- Favicon -->
   <link rel="icon" href="IMG_20240403_213310_346.ico" type="image/x-icon" />
 
-  <!-- Fonts -->
+  <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     html, body {
@@ -20,6 +21,10 @@
       background-color: #121212;
       font-family: 'Poppins', sans-serif;
       color: #f5f5f5;
+      overflow-x: hidden;
+      -webkit-user-select: none; /* Disable text selection on iOS */
+      user-select: none; /* Disable text selection */
+      touch-action: manipulation; /* Better touch experience */
     }
 
     .container {
@@ -50,7 +55,7 @@
     .profile-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 8px; /* Reduced space */
+      margin-bottom: 8px; /* Smaller space */
     }
 
     .profile-border {
@@ -66,7 +71,7 @@
     }
 
     .profile-img {
-      width: 150px; /* Made bigger */
+      width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
@@ -107,29 +112,30 @@
     .buttons {
       display: flex;
       justify-content: center;
+      gap: 15px;
       margin-top: 20px;
     }
 
     .buttons a {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 8px;
       background: #3B82F6;
-      padding: 16px;
-      border-radius: 12px;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 6px;
       text-decoration: none;
+      font-weight: 500;
       transition: background 0.3s ease;
-      width: 60px;
-      height: 60px;
+      font-size: 0.95em;
     }
 
     .buttons a:hover {
       background: #2563EB;
     }
 
-    .buttons img {
-      width: 30px;
-      height: 30px;
+    .buttons i {
+      font-size: 1.2em;
     }
 
     @media (max-width: 480px) {
@@ -146,13 +152,8 @@
       }
 
       .buttons a {
-        width: 55px;
-        height: 55px;
-      }
-
-      .buttons img {
-        width: 28px;
-        height: 28px;
+        font-size: 0.9em;
+        padding: 8px 12px;
       }
     }
   </style>
@@ -179,12 +180,15 @@
 
       <p class="intro">
         Entrepreneur / Programmer / Student <br><br>
-        📍Chanmari, Aizawl, Mizoram 
+        📍Aizawl, Mizoram 
       </p>
 
       <div class="buttons">
         <a href="https://www.instagram.com/edward.wtf" target="_blank" rel="noopener noreferrer">
-          <img src="icons8-instagram.svg" alt="Instagram" />
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="mailto:edwardlalnipuia@mail.ru" rel="noopener noreferrer">
+          <i class="fas fa-envelope"></i> Email
         </a>
       </div>
     </div>

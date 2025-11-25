@@ -1,21 +1,24 @@
-// Advanced Visitor Tracker with Geolocation
-// Add this script to your main website HTML before </body> tag
+// Advanced Visitor Tracker - FIXED VERSION
+// Add this to your main website before </body> tag
 
 (function() {
     'use strict';
     
-    // ===== YOUR SUPABASE CONFIGURATION =====
     const SUPABASE_URL = 'https://czawohksxfoesonhpyke.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6YXdvaGtzeGZvZXNvbmhweWtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwNDU0ODIsImV4cCI6MjA3OTYyMTQ4Mn0._DBZLKdqDFMVE-sLIKORdVVpEXT04fcb0MRiuYxv36o';  // REPLACE THIS with your anon public key
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6YXdvaGtzeGZvZXNvbmhweWtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwNDU0ODIsImV4cCI6MjA3OTYyMTQ4Mn0._DBZLKdqDFMVE-sLIKORdVVpEXT04fcb0MRiuYxv36o';
     
     function generateSessionId() {
         const stored = localStorage.getItem('visitor_session_id');
         if (stored) {
-            const sessionData = JSON.parse(stored);
-            if (Date.now() - sessionData.lastActive < 30 * 60 * 1000) {
-                sessionData.lastActive = Date.now();
-                localStorage.setItem('visitor_session_id', JSON.stringify(sessionData));
-                return sessionData.id;
+            try {
+                const sessionData = JSON.parse(stored);
+                if (Date.now() - sessionData.lastActive < 30 * 60 * 1000) {
+                    sessionData.lastActive = Date.now();
+                    localStorage.setItem('visitor_session_id', JSON.stringify(sessionData));
+                    return sessionData.id;
+                }
+            } catch (e) {
+                console.warn('Session parse error:', e);
             }
         }
         
@@ -59,15 +62,6 @@
         if (ua.indexOf('Windows NT 10') > -1) {
             os = 'Windows';
             version = '10/11';
-        } else if (ua.indexOf('Windows NT 6.3') > -1) {
-            os = 'Windows';
-            version = '8.1';
-        } else if (ua.indexOf('Windows NT 6.2') > -1) {
-            os = 'Windows';
-            version = '8';
-        } else if (ua.indexOf('Windows NT 6.1') > -1) {
-            os = 'Windows';
-            version = '7';
         } else if (ua.indexOf('Windows') > -1) {
             os = 'Windows';
         } else if (ua.indexOf('Mac OS X') > -1) {
@@ -144,10 +138,14 @@
 
     async function trackVisitor() {
         try {
+            console.log('🔍 Starting visitor tracking...');
+            
             const sessionId = generateSessionId();
             const browserInfo = getBrowserInfo();
             const osInfo = getOSInfo();
             const geo = await getGeolocation();
+            
+            console.log('📍 Location:', geo.city, geo.country);
             
             const visitorData = {
                 session_id: sessionId,
@@ -175,6 +173,8 @@
                 user_agent: navigator.userAgent
             };
 
+            console.log('📤 Sending data to Supabase...');
+
             const response = await fetch(`${SUPABASE_URL}/rest/v1/visitors`, {
                 method: 'POST',
                 headers: {
@@ -187,11 +187,13 @@
             });
             
             if (!response.ok) {
-                throw new Error(`Tracking failed: ${response.statusText}`);
+                const errorText = await response.text();
+                throw new Error(`Tracking failed: ${response.status} - ${errorText}`);
             }
             
             localStorage.setItem('has_visited', 'true');
-            console.log('✅ Visitor tracked successfully');
+            console.log('✅ Visitor tracked successfully!');
+            
         } catch (error) {
             console.error('❌ Visitor tracking error:', error);
         }
@@ -207,7 +209,7 @@
                 page_title: document.title
             };
 
-            await fetch(`${SUPABASE_URL}/rest/v1/page_views`, {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/page_views`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -218,7 +220,9 @@
                 body: JSON.stringify(pageData)
             });
             
-            console.log('✅ Page view tracked');
+            if (response.ok) {
+                console.log('✅ Page view tracked');
+            }
         } catch (error) {
             console.error('❌ Page view tracking error:', error);
         }
@@ -234,8 +238,8 @@
     window.addEventListener('beforeunload', () => {
         if (pageVisible) {
             const timeSpent = Math.floor((Date.now() - startTime) / 1000);
-            
             const sessionId = generateSessionId();
+            
             const blob = new Blob([JSON.stringify({
                 session_id: sessionId,
                 page_url: window.location.href,
@@ -254,6 +258,7 @@
         const tracked = sessionStorage.getItem('tracked_this_session');
         
         if (!tracked) {
+            console.log('🚀 Initializing visitor tracking...');
             trackVisitor();
             sessionStorage.setItem('tracked_this_session', 'true');
         }
